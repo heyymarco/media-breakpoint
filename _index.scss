@@ -1,0 +1,88 @@
+@use "bootstrap" as bs;
+@import "node_modules/bootstrap/scss/mixins/breakpoints";
+
+
+
+$breakpoint-large-desktop: xl;
+$breakpoint-small-desktop: lg;
+$breakpoint-tablet: md;
+$breakpoint-lands-phone: sm;
+$breakpoint-port-phone: xs;
+
+$grid-breakpoints: bs.$grid-breakpoints !default;
+
+
+
+
+// Media of below the maximum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-less-than($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        $max: $min - .02;
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+
+
+
+/// giant devices, large desktops
+@mixin media-desktop-up {
+    @include media-breakpoint-up($breakpoint-large-desktop, $grid-breakpoints) {
+        @content;
+    }
+}
+
+
+
+/* begin: we merged small desktops & tablets as "tablet" */
+
+/// small desktops, tablets, landscape phones, portrait phones
+@mixin media-tablet-down {
+    @include media-breakpoint-down($breakpoint-small-desktop, $grid-breakpoints) {
+        @content;
+    }
+}
+
+/// giant devices, large desktops, small desktops, tablets
+@mixin media-tablet-up {
+    @include media-breakpoint-up($breakpoint-tablet, $grid-breakpoints) {
+        @content;
+    }
+}
+
+/* end: we merged small desktops & tablets as "tablet" */
+
+
+
+/* begin: we merged landscape phones & portrait phones as "phone" */
+
+/// landscape phones, portrait phones
+@mixin media-phone-down {
+    @include media-breakpoint-down($breakpoint-lands-phone, $grid-breakpoints) {
+        @content;
+    }
+}
+
+/* begin: we merged landscape phones & portrait phones as "phone" */
+
+
+
+/// giant devices, large desktops, small desktops, tablets, landscape phones
+@mixin media-lands-phone-up {
+    @include media-breakpoint-up($breakpoint-lands-phone, $grid-breakpoints) {
+        @content;
+    }
+}
+
+/// portrait phones
+@mixin media-port-phone-down {
+    @include media-breakpoint-down($breakpoint-port-phone, $grid-breakpoints) {
+        @content;
+    }
+}

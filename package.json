@@ -1,0 +1,34 @@
+{
+  "name": "@heymarco/media-breakpoint",
+  "version": "1.0.0",
+  "description": "provides SCSS media definitions for making responsive web page.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyymarco/media-breakpoint.git"
+  },
+  "keywords": [
+    "responsive",
+    "web",
+    "page",
+    "html",
+    "scss",
+    "css",
+    "mobile",
+    "phone",
+    "tablet",
+    "desktop"
+  ],
+  "author": "HeyMarco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyymarco/media-breakpoint/issues"
+  },
+  "homepage": "https://github.com/heyymarco/media-breakpoint#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {}
+}
