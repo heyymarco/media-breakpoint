@@ -1,0 +1,13 @@
+@use "bootstrap" as bs;
+
+
+
+/* begin: merge the required BS breakpoints */
+$grid-breakpoints: bs.$grid-breakpoints !default;
+
+// development:
+// @import "node_modules/bootstrap/scss/mixins/breakpoints";
+
+// production:
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+/* end: merge the required BS breakpoints */

@@ -1,5 +1,5 @@
-@use "bootstrap" as bs;
-@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@forward "bootstrap-breakpoints";
+@use "bootstrap-breakpoints" as *;
 
 
 
@@ -8,9 +8,6 @@ $breakpoint-small-desktop: lg;
 $breakpoint-tablet: md;
 $breakpoint-lands-phone: sm;
 $breakpoint-port-phone: xs;
-
-$grid-breakpoints: bs.$grid-breakpoints !default;
-
 
 
 
